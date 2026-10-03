@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 開發專案快照 | KenLiu 劉炳祥</title>
+  <meta name="description" content="KenLiu 劉炳祥的 AI 開發專案快照總覽，點擊即可前往各專案的線上導覽。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="ai-projects-data.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans TC', 'Space Grotesk', sans-serif; background: #080818; color: #f1f5f9; line-height: 1.7; overflow-x: hidden; }
+    ::selection { background: rgba(124,58,237,0.32); }
+
+    .bar { position: sticky; top: 0; z-index: 10; height: 64px; display: flex; align-items: center; padding: 0 24px; background: rgba(8,8,24,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(139,92,246,0.2); }
+    .bar-in { max-width: 1200px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; font-weight: 700; text-decoration: none; background: linear-gradient(135deg,#a78bfa,#22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .back { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; padding: 8px 16px; border-radius: 10px; border: 1px solid rgba(139,92,246,0.28); background: rgba(255,255,255,0.06); transition: all .2s; }
+    .back:hover { background: rgba(255,255,255,0.12); }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 72px 24px 96px; }
+    .eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #22d3ee; margin-bottom: 10px; }
+    h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem,4vw,2.8rem); font-weight: 700; line-height: 1.18; margin-bottom: 12px; }
+    .sub { color: #64748b; max-width: 620px; margin-bottom: 48px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 22px; }
+    .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(139,92,246,0.18); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; transition: all .3s; }
+    .card:hover { border-color: rgba(124,58,237,0.5); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(124,58,237,0.18); }
+    .shot { position: relative; aspect-ratio: 16/10; background: linear-gradient(135deg,#111132,#1c1c48); display: block; overflow: hidden; }
+    .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .5s; }
+    .card:hover .shot img { transform: scale(1.04); }
+    .shot .fallback { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-size: 3.8rem; opacity: .65; }
+    .shot.noimg .fallback { display: flex; }
+    .no { position: absolute; top: 10px; left: 10px; padding: 2px 10px; border-radius: 100px; background: rgba(8,8,24,0.78); color: #a78bfa; font: 700 0.72rem 'Space Grotesk', sans-serif; }
+    .body { padding: 18px 20px 20px; display: flex; flex-direction: column; flex: 1; }
+    .body h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.02rem; font-weight: 700; margin-bottom: 6px; }
+    .body p { color: #64748b; font-size: 0.84rem; line-height: 1.65; margin-bottom: 12px; flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+    .tags span { padding: 3px 9px; border-radius: 6px; background: rgba(124,58,237,0.1); color: #a78bfa; font-size: 0.71rem; font-weight: 600; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .links a { display: inline-flex; align-items: center; gap: 5px; padding: 6px 13px; border-radius: 8px; border: 1px solid rgba(139,92,246,0.22); color: #94a3b8; text-decoration: none; font-size: 0.78rem; transition: all .2s; }
+    .links a:first-child { border-color: rgba(34,211,238,0.35); color: #22d3ee; font-weight: 600; }
+    .links a:hover { color: #f1f5f9; background: rgba(34,211,238,0.1); }
+
+    footer { border-top: 1px solid rgba(139,92,246,0.12); padding: 32px 24px; text-align: center; color: #334155; font-size: 0.85rem; }
+    footer a { color: #a78bfa; text-decoration: none; }
+    @media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="bar"><div class="bar-in">
+    <a class="logo" href="index.html">KenLiu</a>
+    <a class="back" href="index.html#ai-projects">← 回到首頁</a>
+  </div></header>
+
+  <main>
+    <p class="eyebrow">AI Projects · Snapshots</p>
+    <h1>AI 開發專案快照</h1>
+    <p class="sub" id="sub"></p>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer><p>© 2026 <a href="index.html">KenLiu 劉炳祥</a> · 用技術驅動，用熱情打造</p></footer>
+
+  <script>
+    const list = window.AI_PROJECTS || [];
+    document.getElementById('sub').textContent = `AI 開發專案共 ${list.length} 項，點擊快照即可前往各專案的線上導覽。`;
+
+    // 資料全為自家 ai-projects-data.js 的靜態內容，用 textContent / setAttribute 組 DOM，不走 innerHTML。
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
+
+    const grid = document.getElementById('grid');
+    list.forEach((p, i) => {
+      const card = el('article', 'card');
+
+      const shot = el('a', 'shot');
+      shot.href = p.links[0].url; shot.target = '_blank'; shot.rel = 'noopener noreferrer';
+      shot.setAttribute('aria-label', `${p.title} 快照`);
+      const img = el('img'); img.src = `images/ai/${p.id}.webp`; img.alt = `${p.title} 快照`; img.loading = 'lazy';
+      img.onerror = () => { img.remove(); shot.classList.add('noimg'); };  // 沒截到圖就退回 emoji
+      shot.append(img, el('span', 'fallback', p.icon), el('span', 'no', String(i + 1).padStart(2, '0')));
+
+      const body = el('div', 'body');
+      const tags = el('div', 'tags'); p.tags.forEach(t => tags.append(el('span', '', t)));
+      const links = el('div', 'links');
+      p.links.forEach(l => { const a = el('a', '', l.label); a.href = l.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; links.append(a); });
+      body.append(el('h2', '', p.title), el('p', '', p.desc), tags, links);
+
+      card.append(shot, body);
+      grid.append(card);
+    });
+  </script>
+</body>
+</html>

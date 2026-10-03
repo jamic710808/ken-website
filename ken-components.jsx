@@ -67,6 +67,7 @@ const KenNav = ({ accentColor }) => {
   { href: '#skills', label: '技能' },
   { href: '#experience', label: '經歷' },
   { href: '#portfolio', label: '作品集' },
+  { href: '#ai-projects', label: 'AI 專案' },
   { href: '#powerbi', label: 'Power BI' }];
 
 
@@ -191,7 +192,8 @@ const KenHero = ({ accentColor, showParticles }) => {
         <div style={{ ...fade(400), display: 'flex', gap: 12, justifyContent: 'center', marginTop: 40, flexWrap: 'wrap' }}>
           {[
           { href: '#portfolio', label: '查看作品集', primary: true },
-          { href: 'https://github.com/jamic710808', label: 'GitHub', icon: <GitHubIcon />, external: true },
+          { href: '#ai-projects', label: `AI 開發專案 · ${(window.AI_PROJECTS || []).length} 項` },
+          { href: '#powerbi', label: 'Power BI 專輯' },
           { href: '#contact', label: '聯絡我' }].
           map((btn) =>
           <a key={btn.href} href={btn.href} target={btn.external ? '_blank' : undefined} rel={btn.external ? 'noopener noreferrer' : undefined}
@@ -379,7 +381,7 @@ const KenPortfolio = ({ accentColor }) => {
   { icon: '🏭', tag: 'Live Demo', title: '製造業分析儀表板', desc: '製造業多維度 BI 儀表板，涵蓋產線效率、成本動因與毛利分析，將 ERP 數據轉化為管理決策視圖。', tech: ['React', 'TypeScript', 'Power Query', 'Vercel'], demo: 'https://manufacturing-analytics-v2.vercel.app/overview' },
   { icon: '📦', tag: 'Live Demo', title: '存貨分析儀表板', desc: '存貨策略分析平台，支援多維度庫存 KPI 監控、周轉率分析與呆滯料預警，優化供應鏈決策。', tech: ['React', 'Next.js', 'TypeScript', 'API'], demo: 'https://inventory-strategic-os-v3-9efx.vercel.app/' },
   { icon: '🛒', tag: 'Live Demo', title: '採購智能平台', desc: '採購數據分析與供應商管理平台，整合採購成本趨勢、議價分析與供應商績效評估，自動化採購決策。', tech: ['React', 'TypeScript', 'Tailwind', 'Vercel'], demo: 'https://procurement-analytics-v2.vercel.app/' },
-  { icon: '🧠', tag: 'Live Demo', title: '智慧數據分析助理', desc: '基於 LangChain + FastAPI + React 建構的智慧資料分析系統，支援自然語言轉 SQL 查詢，實現對話式數據探索。', tech: ['LangChain', 'FastAPI', 'React', 'NL2SQL'], github: 'https://github.com/jamic710808/NL2SQLAgent-HF', demo: 'https://ken19820808-nl2sqlagent-hf.hf.space/' },
+  { icon: '🧠', tag: 'Live Demo', title: '智慧數據分析助理', desc: '基於 LangChain + FastAPI + React 建構的智慧資料分析系統，支援自然語言轉 SQL 查詢，實現對話式數據探索。', tech: ['LangChain', 'FastAPI', 'React', 'NL2SQL'], github: 'https://github.com/jamic710808/NL2SQLAgent-HF', demo: 'https://ken19820808-nl2sqlagent-hf-v2.hf.space/' },
   { icon: '☕', tag: 'Live Demo', title: 'Kenken Barista\'s Atelier', desc: '為咖啡愛好者打造的高階電商平台，結合 Glassmorphism 設計、AI 咖啡師個性化建議、完整訂單流程，以及 GAS Webhook 自動通知系統。', tech: ['React 18', 'TypeScript', 'Node.js', 'Prisma', 'GAS'], github: 'https://github.com/jamic710808', demo: 'https://ken19820808-kenkenbaristaatelier.hf.space' },
   { icon: '✍️', tag: 'Live Demo', title: 'AI 文字潤飾器', desc: '貼入原始文字、選擇場景，AI 即時將文字潤色為專業格式。零技術門檻，適合任何需要快速提升文字品質的使用者。', tech: ['React', 'AI API', 'TypeScript', 'Vercel'], github: 'https://github.com/jamic710808/ai-text-polisher', demo: 'https://ai-text-polisher-dusky.vercel.app/' },
   { icon: '🐾', tag: 'Live Demo', title: '泡泡爪 Pet Spa 預約平台', desc: '為貓狗提供洗澡、精修、皮毛護理和幼寵適應服務。透明操作區、低噪吹乾間和獨立消毒工具，讓每次洗護都更安心。', tech: ['React', 'TypeScript', 'Tailwind', 'Vercel'], github: 'https://github.com/jamic710808/pet_care', demo: 'https://petcare-main-one.vercel.app/' },
@@ -412,12 +414,6 @@ const KenPortfolio = ({ accentColor }) => {
                     {p.tech.map((t) => <span key={t} style={{ padding: '3px 9px', borderRadius: 6, background: `${accent}1a`, color: '#a78bfa', fontSize: '0.71rem', fontWeight: 600 }}>{t}</span>)}
                   </div>
                   <div style={{ display: 'flex', gap: 8 }}>
-                    <a href={p.github || 'https://github.com/jamic710808'} target="_blank" rel="noopener noreferrer"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '6px 13px', borderRadius: 8, border: '1px solid rgba(139,92,246,0.22)', color: '#94a3b8', textDecoration: 'none', fontSize: '0.78rem', transition: 'all 0.2s' }}
-                  onMouseEnter={(e) => {e.currentTarget.style.color = '#f1f5f9';e.currentTarget.style.borderColor = `${accent}55`;e.currentTarget.style.background = `${accent}12`;}}
-                  onMouseLeave={(e) => {e.currentTarget.style.color = '#94a3b8';e.currentTarget.style.borderColor = 'rgba(139,92,246,0.22)';e.currentTarget.style.background = '';}}>
-                      <GitHubIcon />GitHub
-                    </a>
                     <a href={p.demo} target="_blank" rel="noopener noreferrer"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '6px 13px', borderRadius: 8, border: `1px solid ${p.tag === 'Live Demo' ? 'rgba(34,211,238,0.35)' : 'rgba(139,92,246,0.22)'}`, color: p.tag === 'Live Demo' ? '#22d3ee' : '#94a3b8', textDecoration: 'none', fontSize: '0.78rem', fontWeight: p.tag === 'Live Demo' ? 600 : 400, transition: 'all 0.2s' }}
                   onMouseEnter={(e) => {e.currentTarget.style.color = '#f1f5f9';e.currentTarget.style.background = p.tag === 'Live Demo' ? 'rgba(34,211,238,0.1)' : `${accent}12`;}}
@@ -441,9 +437,7 @@ const KenContact = ({ accentColor }) => {
   const cards = [
   { href: 'mailto:jamic710808@hotmail.com', icon: <span style={{ fontSize: '1.1rem' }}>✉</span>, label: 'Hotmail', value: 'jamic710808@hotmail.com' },
   { href: 'mailto:jamic710808@gmail.com', icon: <span style={{ fontSize: '1.1rem' }}>✉</span>, label: 'Gmail', value: 'jamic710808@gmail.com' },
-  { href: 'https://line.me/ti/p/~ken19820808', icon: <span style={{ fontSize: '1.1rem', fontWeight: 700 }}>L</span>, label: 'LINE ID', value: 'ken19820808' },
-  { href: 'https://github.com/jamic710808', icon: <GitHubIcon />, label: 'GitHub', value: 'jamic710808' },
-  { href: 'https://vercel.com/kenliu19820808', icon: <span style={{ fontWeight: 900, fontSize: '1.1rem' }}>▲</span>, label: 'Vercel', value: 'kenliu19820808' }];
+  { href: 'https://line.me/ti/p/~ken19820808', icon: <span style={{ fontSize: '1.1rem', fontWeight: 700 }}>L</span>, label: 'LINE ID', value: 'ken19820808' }];
 
 
   return (
@@ -469,9 +463,6 @@ const KenContact = ({ accentColor }) => {
               </a>
             </Reveal>
           )}
-        </div>
-        <div style={{ marginTop: 64, paddingTop: 48, borderTop: '1px solid rgba(139,92,246,0.12)', color: '#334155', fontSize: '0.88rem' }}>
-          透過 GitHub 與 Vercel 可查看所有公開作品
         </div>
       </div>
     </section>);
@@ -693,4 +684,70 @@ const KenPowerBI = ({ accentColor }) => {
   );
 };
 
-Object.assign(window, { KenNav, KenHero, KenAbout, KenSkills, KenExperience, KenPortfolio, KenPowerBI, KenContact, KenFooter });
+/* ---------- AI Projects (資料來源：ai-projects-data.js) ---------- */
+const KenAIProjects = ({ accentColor }) => {
+  const accent = accentColor || '#7c3aed';
+  const projects = window.AI_PROJECTS || [];
+
+  const galleryBtn = (
+    <a href="ai-projects.html"
+      style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '11px 22px', borderRadius: 12, background: accent, color: '#fff', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none', transition: 'all 0.22s', whiteSpace: 'nowrap' }}
+      onMouseEnter={(e) => {e.currentTarget.style.transform = 'translateY(-2px)';e.currentTarget.style.boxShadow = `0 8px 28px ${accent}66`;}}
+      onMouseLeave={(e) => {e.currentTarget.style.transform = '';e.currentTarget.style.boxShadow = '';}}>
+      查看全部 {projects.length} 項快照 →
+    </a>
+  );
+
+  return (
+    <section id="ai-projects" style={{ background: '#0d0d24', padding: '110px 24px' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+        <Reveal>
+          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: 20, marginBottom: 52 }}>
+            <div>
+              <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#22d3ee', marginBottom: 10 }}>AI Projects</p>
+              <h2 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: 'clamp(2rem,4vw,2.8rem)', fontWeight: 700, lineHeight: 1.18, marginBottom: 12 }}>AI 開發專案</h2>
+              <p style={{ color: '#475569', maxWidth: 560 }}>AI 開發專案共有 {projects.length} 項，涵蓋 NL2SQL、RAG / GraphRAG、文件審核與 Agent 平台，點擊即可直接體驗。</p>
+            </div>
+            {galleryBtn}
+          </div>
+        </Reveal>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(310px,1fr))', gap: 22 }}>
+          {projects.map((p, i) =>
+          <Reveal key={p.id} delay={(i % 3) * 60}>
+              <article style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(139,92,246,0.18)', borderRadius: 18, overflow: 'hidden', transition: 'all 0.3s', display: 'flex', flexDirection: 'column', height: '100%' }}
+            onMouseEnter={(e) => {e.currentTarget.style.borderColor = `${accent}66`;e.currentTarget.style.transform = 'translateY(-5px)';e.currentTarget.style.boxShadow = `0 16px 48px ${accent}22`;}}
+            onMouseLeave={(e) => {e.currentTarget.style.borderColor = 'rgba(139,92,246,0.18)';e.currentTarget.style.transform = '';e.currentTarget.style.boxShadow = '';}}>
+                <div style={{ aspectRatio: '16/9', background: 'linear-gradient(135deg,#111132,#1c1c48)', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                  <span style={{ fontSize: '3.8rem', opacity: 0.65 }}>{p.icon}</span>
+                  <span style={{ position: 'absolute', top: 12, left: 12, fontFamily: "'Space Grotesk',sans-serif", fontSize: '0.72rem', fontWeight: 700, color: '#a78bfa', opacity: 0.7 }}>{String(i + 1).padStart(2, '0')}</span>
+                  <span style={{ position: 'absolute', top: 12, right: 12, padding: '3px 11px', borderRadius: 100, background: 'rgba(34,211,238,0.18)', color: '#22d3ee', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.05em' }}>🟢 Live Demo</span>
+                </div>
+                <div style={{ padding: 20, display: 'flex', flexDirection: 'column', flex: 1 }}>
+                  <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '1.05rem', fontWeight: 700, marginBottom: 8 }}>{p.title}</h3>
+                  <p style={{ color: '#64748b', fontSize: '0.85rem', lineHeight: 1.68, marginBottom: 14, flex: 1 }}>{p.desc}</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginBottom: 15 }}>
+                    {p.tags.map((t) => <span key={t} style={{ padding: '3px 9px', borderRadius: 6, background: `${accent}1a`, color: '#a78bfa', fontSize: '0.71rem', fontWeight: 600 }}>{t}</span>)}
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                    {p.links.map((l, j) =>
+                    <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer"
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '6px 13px', borderRadius: 8, border: `1px solid ${j === 0 ? 'rgba(34,211,238,0.35)' : 'rgba(139,92,246,0.22)'}`, color: j === 0 ? '#22d3ee' : '#94a3b8', textDecoration: 'none', fontSize: '0.78rem', fontWeight: j === 0 ? 600 : 400, transition: 'all 0.2s' }}
+                    onMouseEnter={(e) => {e.currentTarget.style.color = '#f1f5f9';e.currentTarget.style.background = j === 0 ? 'rgba(34,211,238,0.1)' : `${accent}12`;}}
+                    onMouseLeave={(e) => {e.currentTarget.style.color = j === 0 ? '#22d3ee' : '#94a3b8';e.currentTarget.style.background = '';}}>
+                        <LinkIcon />{l.label}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          )}
+        </div>
+        <Reveal>
+          <div style={{ marginTop: 48, textAlign: 'center' }}>{galleryBtn}</div>
+        </Reveal>
+      </div>
+    </section>);
+};
+
+Object.assign(window, { KenNav, KenHero, KenAbout, KenSkills, KenExperience, KenPortfolio, KenAIProjects, KenPowerBI, KenContact, KenFooter });
