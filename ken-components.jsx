@@ -569,6 +569,7 @@ const KenPowerBI = ({ accentColor }) => {
       en: 'E-commerce Business Analytics',
       icon: '🛍️',
       link: 'https://app.powerbi.com/view?r=eyJrIjoiMjA0ZTIyNjMtNDE4YS00ZTkyLWEzZjktY2JjOWFiZmQ5ZGFjIiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
+      guide: 'https://site-ten-gray-11.vercel.app/',
       desc: '建立「流量 → 客戶 → 訂單 → 營收 → 利潤 → 履約 → 退貨 → 重購」的完整電商分析鏈路，整合銷售、訂單、利潤、客戶、履約、行銷與時間趨勢，資料期間 2024.01–2025.12。含 HTML KPI 卡片與約 16 個精修指標，可作為經營儀表板、管理報告與後續 AI 自動摘要分析的基礎。',
       frameworks: [
         { no:'01', icon:'🛍️', title:'銷售與訂單分析', en:'Sales & Orders', kpis:['成交額','GMV','訂單優惠金額','實付金額','有效訂單數','已完成訂單數','取消訂單數','銷售件數'], q:'追蹤整體營收規模與訂單表現，依月份、季度、通路、品類、品牌觀察銷售趨勢與各通路貢獻，判斷成長來自訂單數增加、客單價提升或促銷帶動。' },
@@ -606,6 +607,90 @@ const KenPowerBI = ({ accentColor }) => {
       mockBarLabel: '月度銷售收入（2024/02–06）',
       mockRing: { v:'37.9%', l:'毛利率' },
     },
+    {
+      title: '應收帳款分析 2 版',
+      en: 'Accounts Receivable Analytics v2',
+      icon: '💳',
+      link: 'https://app.powerbi.com/view?r=eyJrIjoiZDhhOTA0MjAtYjI1NS00MTIzLThlYWQtOTZhYWJlNDdmYWFhIiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
+      guide: 'https://powerbi-ar-explainer.vercel.app',
+      desc: '把應收帳款變成看得懂的行動。以 18 個 CSV、6 張事實表與 8 張維度表建立星狀模型，44 個 DAX 度量值統一口徑，7 個頁面分別回答「錢壓在哪、欠多久、先找誰、收回多少、下一步催誰、落到哪張發票」。資料期間 2024-01-01 至 2025-12-31，示範（模擬）資料。',
+      frameworks: [
+        { no:'01', icon:'💼', title:'應收總覽', en:'AR Overview', kpis:['期末應收 20,671.4 萬','逾期餘額 3,844.7 萬','逾期率 18.60%','週轉天數 48.6 天'], q:'錢壓在哪，是不是變大了？以月末應收與逾期趨勢、銷售大區資金占用（西南最多）及直銷／經銷結構，看出資金集中處，右下的經營觀察會隨篩選改寫。' },
+        { no:'02', icon:'⏳', title:'賬齡與逾期', en:'Aging & Overdue', kpis:['逾期餘額','90 天以上 947.7 萬','平均逾期 75.9 天','逾期客戶 119 家'], q:'欠了多久，為什麼拖？賬齡依到期日計算（到期當天不計逾期），分 1–30、31–60、61–90、90 天以上；並以客戶 × 賬齡矩陣與逾期原因（驗收爭議、結算流程延遲、資金週轉）找出拖延根源。' },
+        { no:'03', icon:'🎯', title:'客戶信用風險', en:'Customer Credit Risk', kpis:['應收集中度 37.02%','信用超限 14 家','超限金額 1,386.6 萬','前 20 大逾期客戶'], q:'先該找誰談？以應收餘額 × 逾期率散點圖、前 20 大逾期客戶與額度使用率，找出高占用、高逾期與信用超限的客戶。' },
+        { no:'04', icon:'💵', title:'回款表現', en:'Collection Performance', kpis:['回款金額 185,788.8 萬','到期回款率 97.35%','承諾達成率 81.17%','未來 30 天到期額'], q:'收回多少，以什麼形式？並排到期安排與實際到賬，比較責任人與大區差異及回款方式；到期回款率不等於按時回款率，兩者口徑不同。' },
+        { no:'05', icon:'📞', title:'催收行動', en:'Collection Actions', kpis:['待催收 3,844.7 萬','承諾未兌現 9,748.4 萬','跟進 17,500 次','四階段漏斗'], q:'下一步催誰、催什麼？以已跟進 → 已聯絡 → 有效承諾 → 已兌現四階段漏斗與待處理清單排出行動順序；承諾未兌現額為歷史累計，不等於當前欠款。' },
+        { no:'06', icon:'🧾', title:'應收明細', en:'Invoice Drill-through', kpis:['累計核銷','累計貸項 1,234.1 萬','單據逾期天數','核銷追溯'], q:'落到哪張發票？設定為鑽取頁，從客戶一路追到應收單與核銷記錄，並以回款覆蓋率檢視每張單據的收回程度。' },
+      ],
+      mockTabs: ['應收總覽','賬齡逾期','客戶信用','回款表現','催收行動'],
+      mockKPIs: [{l:'期末應收',v:'20,671.4',u:'萬'},{l:'逾期餘額',v:'3,844.7',u:'萬'},{l:'逾期率',v:'18.6',u:'%'}],
+      mockBars: [100,94,83,72,68],
+      mockBarLabel: '銷售大區期末應收（西南／華中／華東／華北／華南）',
+      mockRing: { v:'97.3%', l:'到期回款率' },
+    },
+    {
+      title: '資金分析報告',
+      en: 'Group Treasury Analytics',
+      icon: '🏦',
+      link: 'https://app.powerbi.com/view?r=eyJrIjoiMjQwMzA4YjItOTMyNi00NmY0LWEzOTctMmI1MDBiYTgzODgzIiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
+      guide: 'https://powerbi-capital-explainer.vercel.app/',
+      desc: '把資金數字變成看得懂的安排。涵蓋 6 家法人、30 個帳戶、4 種幣種，以 18 個 CSV、151 個 DAX 度量值與 55 條關聯建立模型，從 13 週缺口預警、收支預算、結算到期、融資、集團調配到匯率敞口共 7 個頁面。資料截止 2026-10-05，金額單位萬元，示範（模擬）資料。',
+      frameworks: [
+        { no:'01', icon:'🛡️', title:'資金安全總覽', en:'Liquidity Safety', kpis:['可用資金 42,961.7 萬','可調配資金 34,527.8 萬','13 週最低可用 35,812.5 萬','區域性最大缺口 908.6 萬'], q:'接下來 13 週，誰會先缺錢？依「法人 × 幣種」逐一比較預計可用資金與備付底線，缺口不互相抵銷：集團總量充裕，不代表每家法人、每個幣種都夠。' },
+        { no:'02', icon:'📊', title:'收支與預算', en:'Cash Flow & Budget', kpis:['外部收付趨勢','經營／投資／籌資淨現金流','預算偏差','法人與專案'], q:'錢花在哪，預算跑偏了多少？檢視外部收付與三類淨現金流，並比較法人與專案的預算偏差；預算比較限定完整月份與可比項目。' },
+        { no:'03', icon:'🗓️', title:'渠道結算與到期', en:'Settlement & Maturity', kpis:['未結應收／應付','逾期應收','未來到期排程','到帳週期','遲到金額率'], q:'該收的、該付的，什麼時候？從未結與逾期，到未來到期排程與事項明細，再以到帳週期與遲到金額率看回款效率。' },
+        { no:'04', icon:'🏛️', title:'融資與金融工具', en:'Financing', kpis:['加權年利率 5.726%','剩餘期限','存續合同 120 份','可提款授信 7,707.2 萬','降息 50bp 測算'], q:'借錢貴不貴，什麼時候要還？把利率、剩餘期限與本金放在一起看，並以降息 50bp 年化測算估計可省利息；授信只是備用額度，未計入現金餘額。' },
+        { no:'05', icon:'🔁', title:'集團資金調配', en:'Intra-group Pooling', kpis:['各法人可調配資金','供給與缺口','資金池矩陣','同池、同幣種'], q:'能不能先不借，在集團內部解決？檢視各法人餘缺，再以資金池矩陣核查「同一個池、同一種幣種」還有多少匹配空間；頁面僅為候選安排，不代表已審批或執行。' },
+        { no:'06', icon:'💱', title:'跨境與匯率風險', en:'FX Exposure', kpis:['外幣資產負債','遠期調整後淨敞口','匯率指數','±5% 敏感性'], q:'外幣敞口要不要管？比較遠期調整前後的淨敞口與 ±5% 匯率敏感性；做了遠期不等於風險下降，淨買入遠期加在原本的多頭上，敞口反而會變大。' },
+      ],
+      mockTabs: ['安全總覽','收支預算','結算到期','融資','集團調配'],
+      mockKPIs: [{l:'可用資金',v:'42,961.7',u:'萬'},{l:'可調配資金',v:'34,527.8',u:'萬'},{l:'最大缺口',v:'908.6',u:'萬'}],
+      mockBars: [78,72,66,58,52,47,44,40,38,36,33,31],
+      mockBarLabel: '13 週可用資金走勢（示意）',
+      mockRing: { v:'29.6×', l:'備付底線倍數' },
+    },
+    {
+      title: '本量利分析',
+      en: 'Cost-Volume-Profit Analytics',
+      icon: '📐',
+      link: 'https://app.powerbi.com/view?r=eyJrIjoiMWJhODlmMzItZDAwMS00MGVkLTk4OTktM2I1YTZlYWJkYmEzIiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
+      guide: 'https://powerbi-cvp-explainer.vercel.app/',
+      desc: '賣多少，才不虧？把「量 × 價 − 本 = 利」算成一條保本線。分為「公司」與「單品」兩層：公司層看保本營收、安全邊際與利潤彈性，單品層看單位貢獻、可追溯貢獻與保本銷量；68 個 DAX 度量值，原生與 HTML 兩種模擬頁並存，共 6 個頁面。2026 年 8 月基準，示範（模擬）資料。',
+      frameworks: [
+        { no:'01', icon:'📈', title:'經營概覽', en:'Business Overview', kpis:['銷售收入 44,502 萬','邊際貢獻 15,051 萬','經營利潤 3,554 萬','安全邊際率 23.6%'], q:'整體經營現在怎樣？以全期 32 個月的收入、貢獻、利潤與安全邊際，再按產品、渠道、區域拆出貢獻來源；電商直營邊際貢獻最高（7,734 萬）。' },
+        { no:'02', icon:'🧮', title:'公司量本利分析（原生）', en:'Company CVP · Native', kpis:['保本營收 1,217 萬','安全邊際率 14.2%','1% 營收影響 4.4 萬','經營槓桿 7.0'], q:'營收、貢獻率、固定費用變了，利潤和保本點怎麼動？全用 Power BI 原生視覺與三個數值引數，並以 5×5 利潤敏感性矩陣呈現。' },
+        { no:'03', icon:'🎛️', title:'公司保本與利潤模擬（HTML）', en:'Company CVP · HTML', kpis:['計畫營收 1,418 萬','貢獻率 30.7%','固定成本底線 374 萬','保本等效銷量 40,488 臺'], q:'同樣的分析，能不能更直覺地玩？同一組假設改用 HTML 輸入框與滑桿即時調整，保本線圖與白話經營判斷同步更新。' },
+        { no:'04', icon:'📦', title:'單品貢獻與保本模擬', en:'Product CVP', kpis:['單位邊際貢獻','CM%','可追溯貢獻','專屬費用保本銷量'], q:'這個產品該怎麼定價、還值不值得投入？調整價格、銷量、生產變動成本與專屬固定費，只看可追溯貢獻；共同固定費用不分攤，避免硬分攤造成決策失真。' },
+        { no:'05', icon:'📖', title:'口徑說明', en:'Definitions', kpis:['邊際貢獻','綜合貢獻率','保本營收','安全邊際率','經營利潤'], q:'這些數字到底怎麼算？集中說明資料背景、分析思路、指標口徑與頁面用法；綜合貢獻率不是會計毛利率，保本營收只在公司整體口徑才有值。' },
+      ],
+      mockTabs: ['經營概覽','公司量本利','保本模擬','單品貢獻','口徑說明'],
+      mockKPIs: [{l:'計畫營收',v:'1,418',u:'萬'},{l:'邊際貢獻率',v:'30.7',u:'%'},{l:'保本營收',v:'1,217',u:'萬'}],
+      mockBars: [100,57,38],
+      mockBarLabel: '渠道邊際貢獻（電商直營／經銷／企業團購）',
+      mockRing: { v:'14.2%', l:'安全邊際率' },
+    },
+    {
+      title: '庫存分析報告',
+      en: 'Inventory Analytics',
+      icon: '📦',
+      link: 'https://app.powerbi.com/view?r=eyJrIjoiNzJhYTNhZmYtZjg0YS00NDhkLWJlMDctYzJjNjFmN2UzMGY0IiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
+      guide: 'https://powerbi-inventory-explainer.vercel.app/',
+      desc: '把庫存數字變成看得懂的判斷。以 19 個 CSV、93 個 DAX 度量值與 43 條業務關聯建立模型，涵蓋 80 項商品、3 個倉庫、日快照 175,200 列，8 個頁面從資金占用、週轉、風險、補貨、調撥一路看到盤點準確率。資料期間 2024-09-01 至 2026-08-31，示範（模擬）資料。',
+      frameworks: [
+        { no:'01', icon:'🧭', title:'庫存經營總覽', en:'Inventory Overview', kpis:['5 張 KPI','資金趨勢','風險商品前十','倉庫資金占比','庫存管理要點'], q:'現在最該注意什麼？一頁彙整資金趨勢、風險商品與倉庫占比，並以隨篩選改寫的「庫存管理要點」文字給出判斷。' },
+        { no:'02', icon:'🏗️', title:'庫存結構與資金佔用', en:'Structure & Capital', kpis:['在庫金額','可用金額','凍結金額','殘次金額'], q:'錢壓在哪裡？看各倉庫存狀態結構，以及品牌與品類的資金占用，分辨良品、凍結、殘次各占多少。' },
+        { no:'03', icon:'🔄', title:'庫存週轉效率', en:'Turnover', kpis:['日均在庫','淨銷售出庫成本','週轉次數','週轉天數 22.5 天'], q:'庫存轉得快不快？以散點圖找出高占用、慢週轉的商品；週轉天數與週轉次數互為倒數關係，是同一件事的兩種說法。' },
+        { no:'04', icon:'⚠️', title:'庫齡、臨期與退市風險', en:'Aging & Expiry Risk', kpis:['超過 180 天','90 天內臨期','已過期','已退市'], q:'哪些貨有風險？庫齡與臨期分開看，再以去重避免重複計算；風險金額已去重，不可相加，因同一批貨可能同時符合多種風險。' },
+        { no:'05', icon:'🚨', title:'缺貨預警與補貨決策', en:'Stockout & Replenishment', kpis:['需求缺貨率 8.0%','未交銷售','逾期在途','待補貨組合','未來 8 週預測'], q:'要不要補貨？把可用庫存、在途、逾期在途與安全庫存並排在補貨工作表，並提供未來 8 週預測，判斷哪些商品要補。' },
+        { no:'06', icon:'🚚', title:'倉間平衡與調撥', en:'Warehouse Balance', kpis:['三倉資金趨勢','調撥在途','調撥出入變化','各倉建議補貨'], q:'別的倉有沒有餘貨？一邊有餘、一邊短缺時，先調再買，避免重複採購與庫存積壓。' },
+        { no:'07', icon:'✅', title:'盤點與庫存準確率', en:'Stocktake Accuracy', kpis:['盤點準確率 93.5%','差異金額','待複核金額','差異原因'], q:'帳和實物對得上嗎？檢視盤點差異集中在哪、哪些要複核；準確率只反映已盤記錄，不等於全倉每天的準確率。' },
+      ],
+      mockTabs: ['經營總覽','庫存結構','週轉效率','風險','補貨決策'],
+      mockKPIs: [{l:'期末在庫金額',v:'78.5',u:'萬'},{l:'在庫週轉天數',v:'22.5',u:'天'},{l:'需求缺貨率',v:'8.0',u:'%'}],
+      mockBars: [48,52,55,50,58,61,57,63,60,66,62,68],
+      mockBarLabel: '月度在庫金額趨勢（示意）',
+      mockRing: { v:'93.5%', l:'盤點準確率' },
+    },
   ];
 
   const r = reports[activeReport];
@@ -642,13 +727,23 @@ const KenPowerBI = ({ accentColor }) => {
               <h3 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '1.35rem', fontWeight: 700, marginBottom: 10 }}>{r.icon} {r.title}</h3>
               <p style={{ color: '#64748b', fontSize: '0.88rem', lineHeight: 1.75, maxWidth: 620 }}>{r.desc}</p>
             </div>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignSelf: 'center' }}>
+            {r.guide && (
+              <a href={r.guide} target="_blank" rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '11px 22px', borderRadius: 12, border: '1px solid rgba(242,200,17,0.45)', color: pbiColor, fontWeight: 700, fontSize: '0.88rem', textDecoration: 'none', transition: 'all 0.22s', whiteSpace: 'nowrap' }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(242,200,17,0.12)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = ''; }}>
+                圖解導覽 ↗
+              </a>
+            )}
             <a href={r.link} target="_blank" rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '11px 22px', borderRadius: 12, background: pbiColor, color: '#1a1a00', fontWeight: 800, fontSize: '0.88rem', textDecoration: 'none', transition: 'all 0.22s', whiteSpace: 'nowrap', alignSelf: 'center' }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '11px 22px', borderRadius: 12, background: pbiColor, color: '#1a1a00', fontWeight: 800, fontSize: '0.88rem', textDecoration: 'none', transition: 'all 0.22s', whiteSpace: 'nowrap' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(242,200,17,0.45)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = ''; }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
               查看完整報告
             </a>
+            </div>
           </div>
         </Reveal>
 
