@@ -487,6 +487,7 @@ const KenPowerBI = ({ accentColor }) => {
       title: '人力資源分析報告',
       en: 'HR Analytics',
       icon: '👥',
+      guide: 'https://powerbi-hr-explainer.vercel.app/',
       link: 'https://app.powerbi.com/view?r=eyJrIjoiZDY5NjdjODItYjNlMy00YmI0LWJjOTAtMTkyY2RhMTllOGNmIiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
       desc: '運用 Power BI 進階 DAX 建模，以五大分析架構全面解析企業人力資本，將複雜的 HR 數據轉化為高階管理決策視圖。',
       frameworks: [
@@ -506,6 +507,7 @@ const KenPowerBI = ({ accentColor }) => {
       title: '銷售業務分析報告',
       en: 'Sales Business Analytics',
       icon: '📈',
+      guide: 'https://powerbi-sales-explainer.vercel.app/',
       link: 'https://app.powerbi.com/view?r=eyJrIjoiM2FmYTUxMTQtNzI0OC00ZDEzLWE5ZjMtNmM5ZDFkNmZjNDY3IiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
       desc: '8 大分析模組涵蓋執行摘要、時間趨勢、產品效能、客戶洞察、市場購物籃分析（MBA）、業務員績效、資料品質監控，大量自訂 SVG KPI 卡片與進階時間智能 DAX。',
       frameworks: [
@@ -589,6 +591,7 @@ const KenPowerBI = ({ accentColor }) => {
       title: '運營分析報告',
       en: 'Retail Operations Analytics',
       icon: '🏬',
+      guide: 'https://powerbi-ops-explainer.vercel.app/',
       link: 'https://app.powerbi.com/view?r=eyJrIjoiODViYmFiMmEtMGJhMC00ZWMwLWE2OTYtOGQzNGIyMzNkNTMyIiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
       desc: '以「總部駕駛艙」為核心的零售營運分析報告，彙整銷售收入、商品成本與毛利潤並提供上期、同期對比，可依年份、月份、渠道、店鋪與年周切片，向下延伸至門店業績、收入、毛利、商品（ABC）、會員、暢銷款與貢獻度分析，共 8 大分析頁面。',
       frameworks: [
@@ -691,6 +694,69 @@ const KenPowerBI = ({ accentColor }) => {
       mockBarLabel: '月度在庫金額趨勢（示意）',
       mockRing: { v:'93.5%', l:'盤點準確率' },
     },
+    {
+      title: '客戶畫像分析',
+      en: 'Customer Profile Analytics',
+      icon: '🪪',
+      link: 'https://app.powerbi.com/view?r=eyJrIjoiYjdiNTdiNzktYjM2NS00NDA4LTg5MjQtMTQ0OGNkN2JjYzczIiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
+      guide: 'https://powerbi-customer-profile-explainer.vercel.app/',
+      desc: '從線索到成交：把客戶的「基本特徵、購車需求、車型偏好、行為階段」放進同一個模型，回答「客戶是誰、要什麼、怎麼溝通」。以 17 張資料表、98 個度量值與 32 條多對一單向關係建立星型模型，涵蓋 21,000 位客戶、12 款車型、36 家門店與 8 個獲客管道，6 個頁面沿著「是誰 → 為什麼買 → 偏好什麼 → 誰易成交 → 怎麼跟進」展開。虛構品牌、合成客戶樣本，觀察截至 2025-12-31。',
+      frameworks: [
+        { no:'01', icon:'👤', title:'客戶基礎畫像', en:'Basic Profile', kpis:['畫像客戶數 21,000','25–44 歲占 66.8%','育兒家庭占 38.4%','年齡未知占比'], q:'客戶是誰？同一個母體用年齡 × 性別、家庭階段、城市級別、年齡 × 家庭矩陣四種圖來看，並刻意放「年齡未知佔比」作為資料品質提醒。' },
+        { no:'02', icon:'🛒', title:'購車需求畫像', en:'Purchase Needs', kpis:['預算分布','購車關注點','用車場景 × 購車類型','有家充條件 60.1%'], q:'為什麼買車？看預算區間（宣告值、不是收入）、關注點（價格與權益、續航與補能排前二）、首購／換購／增購的場景差異，以及各家庭型態能裝家充的比例。' },
+        { no:'03', icon:'🚗', title:'車型偏好畫像', en:'Model Preference', kpis:['家充 × 動力','家庭 × 車身','預算 × 價格帶','意向 → 成交車系'], q:'偏好什麼車？把需求落到產品：有家充條件者純電占最大段，育兒家庭的 SUV 遠多於轎車；意向與成交矩陣的對角線是「想買什麼就買什麼」，其餘是遷移。' },
+        { no:'04', icon:'🎯', title:'轉化客群畫像', en:'Conversion Profile', kpis:['滿 90 天客戶 13,404','90 天下訂率 17.1%','淨下訂率 15.5%','試駕漏斗'], q:'誰更容易成交？分母只用滿 90 天客戶以避免右截斷，毛／淨下訂雙軌並排，樣本不足 30 人不做轉化率排序，並以需求組合散佈圖找出「量夠又轉得好」的組合。' },
+        { no:'05', icon:'🧩', title:'客群分層畫像', en:'Segmentation', kpis:['生命週期五群','需求標籤','客群畫像指數','匿名客戶清單'], q:'怎麼分群跟進？五個互斥生命週期（7,305 / 6,812 / 3,765 / 2,601 / 517，合計 21,000 位）配需求標籤與溝通建議；畫像指數大於 100 代表在該群特別集中，不是人數多。' },
+      ],
+      mockTabs: ['基礎畫像','購車需求','車型偏好','轉化客群','客群分層'],
+      mockKPIs: [{l:'畫像客戶數',v:'21,000',u:'位'},{l:'25–44 歲占比',v:'66.8',u:'%'},{l:'有家充條件',v:'60.1',u:'%'}],
+      mockBars: [100,93,52,36,7],
+      mockBarLabel: '生命週期五群人數（合計 21,000 位）',
+      mockRing: { v:'17.1%', l:'90 天下訂率' },
+    },
+    {
+      title: '製造業案例',
+      en: 'Manufacturing Cost Tracing',
+      icon: '🏭',
+      link: 'https://app.powerbi.com/view?r=eyJrIjoiZjc5YTYxMTMtOGNhNy00NjE3LWJiM2ItMzkxMzhjNTAwODgyIiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
+      guides: [
+        { label: '圖解導覽 · 工廠地圖', url: 'https://manufacturing-factory-tour.vercel.app/' },
+        { label: '圖解導覽 · 資料旅程', url: 'https://manufacturing-powerbi-story.vercel.app/' },
+      ],
+      desc: '一包紙巾，倒著拆。不從資料講起，從架上的成品往回走：成本 → 配方 → 倉庫 → 採購 → 到貨。九份 Excel 經過清洗、模型與 DAX，成為首頁加四個可追查的經營視角（庫存、採購價格、採購時效、生產成本），模型含 19 張業務表、19 條業務關聯與 106 個度量值。報表能指出該追查哪裡，但不能單獨證明原因、節省金額或獲利。',
+      frameworks: [
+        { no:'01', icon:'📦', title:'庫存分析', en:'Inventory', kpis:['庫存金額 15,219.30 萬元','家庭紙類占成品庫存 44.41%','在檔成品 3,136 個','月週轉天數'], q:'錢壓在哪一類料上、放太久沒用的有多少？以原料與成品庫存拆解，長條（日均出庫金額）搭配曲線（月週轉天數）一起看轉得快不快，並檢視近三個月未動銷的成品。畫面篩選 2024-5。' },
+        { no:'02', icon:'💲', title:'採購價格分析', en:'Purchase Price', kpis:['31 家供應商占 90% 金額','下單 4,330 次','同料號跨供應商價差','單價趨勢'], q:'同一個料號向不同供應商買，最高與最低單價差多少？以旗標標出要追的項目，並看單價隨時間的尖峰是哪一張單造成；同一物料的比較須搭配供應商與採購情境解讀。畫面期間 2023/1–2024/5。' },
+        { no:'03', icon:'🚚', title:'採購時效分析', en:'Lead Time', kpis:['最早到貨 12.35 天','最晚到貨 36.17 天','晚於計畫 34.65%','料號 × 供應商週期'], q:'貨到了沒、比計畫早還是晚？一張訂單可能分批到，所以最早與最晚到貨要分開看；最早到貨可用來算時效，但不等於整單到齊率。畫面期間 2023/1–2023/12。' },
+        { no:'04', icon:'🧪', title:'生產成本分析', en:'Production Cost', kpis:['單位成本','材料費用約 92.61%','直接人工、電費、折舊','產品產量排行'], q:'一包紙巾到底花多少？單位成本＝消耗金額 ÷ 實際產量，產量要先按「訂單號＋行號」去重再加總，成本頁由產品、BOM 與費用編碼串接；材料、人工、製造費用三塊中，材料費用約占 92.61%。畫面篩選 2024-5。' },
+        { no:'05', icon:'🗺️', title:'模型與三個新手陷阱', en:'Model & Pitfalls', kpis:['29 張表 · 28 條關聯','106 個度量值','庫存不跨日相加','產量按工單去重','單位換算'], q:'陷阱一：庫存是某一天的存量，只取最後一天、不能每天相加；陷阱二：同一張工單的產量會被各行費用重複帶出，要按訂單號與行號去重；陷阱三：同一個數可能以元、萬元、十萬元呈現，看別人截圖時要先找單位。各頁期間不同，數字不可跨頁相加。' },
+      ],
+      mockTabs: ['首頁','庫存','採購價格','採購時效','生產成本'],
+      mockKPIs: [{l:'度量值',v:'106',u:'個'},{l:'業務表',v:'19',u:'張'},{l:'Excel 來源',v:'9',u:'份'}],
+      mockBars: [34,100],
+      mockBarLabel: '採購週期：最早到貨 12.35 天 vs 最晚到貨 36.17 天',
+      mockRing: { v:'92.61%', l:'材料費用占比' },
+    },
+    {
+      title: '供應鏈分析報告',
+      en: 'Supply Chain Analytics',
+      icon: '🔗',
+      link: 'https://app.powerbi.com/view?r=eyJrIjoiZmNkOWZhNTMtMTkwNC00ZjVkLWIxNzItZTkzMWU2MDVmYWI5IiwidCI6IjE2ZGVlZGU4LTc5ZTktNGUzMy05OWU2LTlkOGQzOTQyZDc5NiIsImMiOjEwfQ%3D%3D',
+      guide: 'https://powerbi-supply-chain-explainer.vercel.app',
+      desc: '把供應鏈數字變成看得懂的取捨：成本合不合理、供應可不可靠、庫存健不健康、異常能不能追到單據。以 11 個 CSV、88 個 DAX 度量值與 20 條關聯建立模型，涵蓋 40 個零件、8 家供應商、4 個倉庫與 4 家承運商，6 個頁面（入口、總覽加 4 個專題）。統計年度 2025，示範（模擬）資料。',
+      frameworks: [
+        { no:'01', icon:'🧭', title:'供應鏈總覽', en:'Supply Chain Overview', kpis:['採購金額 2,919.7 萬','OTIF 86.5%','庫存金額 149.9 萬','來料合格率 98.7%'], q:'現在哪裡值得花時間？4 張 KPI、採購金額趨勢、供應商 OTIF 排名與倉庫缺貨率，加一段會隨篩選改寫的「供應鏈觀察與行動建議」。' },
+        { no:'02', icon:'🛍️', title:'採購與供應商', en:'Procurement & Suppliers', kpis:['採購金額','價差（對標準價）','來料合格率','提前期'], q:'成本合不合理？看金額排序、價差、合格率與提前期，並對照供應商規模與履約；價差為正只代表比標準價貴，不等於採購損失，要和履約、合格率一起看。' },
+        { no:'03', icon:'🏬', title:'庫存與計劃', en:'Inventory & Planning', kpis:['週轉 19.0 天','覆蓋 23.1 天','預測準確率 90.3%','慢動庫存'], q:'庫存健不健康？看庫存金額、週轉、缺貨率與預測準確率，並檢視慢動庫存（90 天以上）與缺貨複核：有的零件放太久，有的零件卻缺貨。補貨複核僅供參考，不是採購指令。' },
+        { no:'04', icon:'🚛', title:'物流履約', en:'Logistics & Delivery', kpis:['準時率 89.7%','足量率 96.8%','OTIF 86.5%','延遲運單 198'], q:'供應可不可靠？把「準時」和「足量」拆開看，兩者要同時達標才算 OTIF；延遲原因為中轉滯留 52、供應商備貨 51、運力不足 48、天氣影響 47，並能追到具體運單。' },
+        { no:'05', icon:'↩️', title:'質量與退貨', en:'Quality & Returns', kpis:['退供貨值','批次退貨率','合格率','處理天數'], q:'異常能不能追到單據？看退貨原因與品類、供應商散點，明細可追到退貨單號與採購單號；這裡的退貨指退給供應商，不是客戶退貨。' },
+      ],
+      mockTabs: ['總覽','採購供應商','庫存計劃','物流履約','質量退貨'],
+      mockKPIs: [{l:'採購金額',v:'2,919.7',u:'萬'},{l:'OTIF',v:'86.5',u:'%'},{l:'來料合格率',v:'98.7',u:'%'}],
+      mockBars: [100,98,92,90],
+      mockBarLabel: '2025 延遲原因（中轉滯留／供應商備貨／運力不足／天氣影響）',
+      mockRing: { v:'86.5%', l:'OTIF 交付率' },
+    },
   ];
 
   const r = reports[activeReport];
@@ -728,14 +794,14 @@ const KenPowerBI = ({ accentColor }) => {
               <p style={{ color: '#64748b', fontSize: '0.88rem', lineHeight: 1.75, maxWidth: 620 }}>{r.desc}</p>
             </div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignSelf: 'center' }}>
-            {r.guide && (
-              <a href={r.guide} target="_blank" rel="noopener noreferrer"
+            {(r.guides || (r.guide ? [{ label: '圖解導覽', url: r.guide }] : [])).map((g) => (
+              <a key={g.url} href={g.url} target="_blank" rel="noopener noreferrer"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '11px 22px', borderRadius: 12, border: '1px solid rgba(242,200,17,0.45)', color: pbiColor, fontWeight: 700, fontSize: '0.88rem', textDecoration: 'none', transition: 'all 0.22s', whiteSpace: 'nowrap' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'rgba(242,200,17,0.12)'; }}
                 onMouseLeave={e => { e.currentTarget.style.background = ''; }}>
-                圖解導覽 ↗
+                {g.label} ↗
               </a>
-            )}
+            ))}
             <a href={r.link} target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '11px 22px', borderRadius: 12, background: pbiColor, color: '#1a1a00', fontWeight: 800, fontSize: '0.88rem', textDecoration: 'none', transition: 'all 0.22s', whiteSpace: 'nowrap' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(242,200,17,0.45)'; }}
