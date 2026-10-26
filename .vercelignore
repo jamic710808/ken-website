@@ -1,0 +1,10 @@
+.git
+.vercel
+node_modules
+.env*
+*.log
+**/*.md
+scripts/
+design-exploration/shots/
+design-exploration/verification/
+design-exploration/themes/hero-*.html
