@@ -22,13 +22,17 @@
     classicFrame.contentDocument?.getElementById(classicAnchors[name] || name)?.scrollIntoView();
   }
   function loadClassic() {
-    if (classicFrame.hasAttribute('src')) return;
-    classicFrame.src = classicFrame.dataset.src;
+    // index.html may already have started the iframe at parse time; only the fallback timer is needed then.
+    if (!classicFrame.hasAttribute('src')) classicFrame.src = classicFrame.dataset.src;
+    if (classicTimer || classicReady) return;
+    performance.mark('classic-start');
     classicTimer = setTimeout(() => { if (!classicReady) { classicLoading.hidden = true; classicFallback.hidden = false; } }, 20000);
   }
-  classicFrame.addEventListener('load', () => {
+  let classicHooked = false;
+  function onClassicLoad() {
     const doc = classicFrame.contentDocument;
-    if (!doc || !doc.getElementById('root')) return;
+    if (classicHooked || !doc || !doc.getElementById('root')) return;
+    classicHooked = true;
     // The parent supplies navigation; the original components keep their own layout and behavior.
     const embedStyle = doc.createElement('style');
     embedStyle.textContent = 'nav[aria-label="主導航"]{display:none!important}html{scroll-padding-top:12px}';
@@ -36,6 +40,7 @@
     const observeReady = () => {
       if (!doc.querySelector('#root h1') || !doc.querySelector('#powerbi')) return false;
       classicReady = true;
+      performance.mark('classic-ready');
       clearTimeout(classicTimer);
       classicLoading.hidden = true;
       classicFallback.hidden = true;
@@ -45,7 +50,10 @@
       return true;
     };
     if (!observeReady()) { const observer = new MutationObserver(() => { if (observeReady()) observer.disconnect(); }); observer.observe(doc.getElementById('root'), { childList: true, subtree: true }); }
-  });
+  }
+  classicFrame.addEventListener('load', onClassicLoad);
+  // The iframe can finish loading before this deferred script runs (cached visits), so check once now.
+  onClassicLoad();
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const anchor = (href, label) => `<a href="${escape(href)}" target="_blank" rel="noopener noreferrer">${escape(label)} <span aria-hidden="true">↗</span></a>`;

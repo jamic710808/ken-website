@@ -7,6 +7,9 @@
   <title>Ken Liu 劉炳祥｜財務實務 × 資料分析 × AI 開發</title>
   <meta name="description" content="Ken Liu 劉炳祥，以財務實務理解商業問題，結合 Power BI、資料分析與 AI 工程，打造可用的決策工具。探索作品、職涯與合作機會。">
   <script>try{const s=new URLSearchParams(location.search).get('style');if(['classic','editorial','systems','gallery','island'].includes(s))document.documentElement.dataset.style=s}catch{}</script>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="design-exploration/shared.css">
   <link rel="stylesheet" href="design-exploration/themes/editorial.css">
   <link rel="stylesheet" href="design-exploration/themes/systems.css">
@@ -40,8 +43,9 @@
     </div>
   </header>
   <section id="classic-shell" class="classic-shell" aria-label="原始版完整網站">
-    <div id="classic-loading" class="classic-loading" role="status">正在載入原始版完整內容…</div>
+    <div id="classic-loading" class="classic-loading" role="status"><span class="classic-spinner" aria-hidden="true"></span><span>正在載入原始版完整內容…<small>首次開啟需編譯頁面，約需數秒</small></span></div>
     <iframe id="classic-frame" title="KenLiu 原始版完整個人品牌網站" data-src="index-classic.html" aria-busy="true"></iframe>
+    <script>/* Start the original page at parse time instead of waiting for deferred scripts. */(function(){var f=document.getElementById('classic-frame');if(document.documentElement.dataset.style==='classic'&&f)f.src=f.dataset.src})()</script>
     <p class="classic-fallback" id="classic-fallback" hidden>原始版仍在載入。<a href="index-classic.html" target="_blank" rel="noopener noreferrer">另開原始版完整頁面 ↗</a></p>
   </section>
   <main id="main" hidden>
