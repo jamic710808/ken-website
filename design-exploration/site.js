@@ -53,7 +53,7 @@
   let requestedStyle = root.dataset.style;
   const toast = message => { const el = document.querySelector('.toast'); el.textContent = message; el.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { el.hidden = true; }, 3500); };
   function applyStyle(style, { remember = false, announce = false } = {}) {
-    if (!styles[style]) style = 'editorial';
+    if (!styles[style]) style = 'classic';
     root.dataset.style = style;
     const classic = style === 'classic';
     document.getElementById('main').hidden = classic;
@@ -70,10 +70,7 @@
     document.querySelectorAll('[data-style-choice]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.styleChoice === style)));
     document.getElementById('style-hint').textContent = styles[style][1];
     document.querySelector('meta[name=color-scheme]').content = classic || style === 'systems' ? 'dark' : 'light';
-    if (remember) {
-      try { localStorage.setItem('ken-brand-style', style); }
-      catch { toast('風格已切換；此瀏覽器無法記住偏好。'); }
-    }
+    // No stored preference: every fresh visit opens the original version; ?style= still deep-links.
     if (announce) document.getElementById('style-status').textContent = `已切換為${styles[style][0]}風格`;
   }
   const styleStatus = document.createElement('span'); styleStatus.id = 'style-status'; styleStatus.className = 'visually-hidden'; styleStatus.setAttribute('role', 'status'); document.body.append(styleStatus);
@@ -88,7 +85,7 @@
     if (heroAnimation) heroAnimation.cancel();
     if (style !== 'classic' && !reduceMotion.matches && hero.animate) heroAnimation = hero.animate([{ opacity: .72, transform: 'translateY(5px)' }, { opacity: 1, transform: 'none' }], { duration: 220, easing: 'cubic-bezier(.16,1,.3,1)' });
   }));
-  window.addEventListener('popstate', () => { requestedStyle = new URLSearchParams(location.search).get('style') || 'editorial'; if (heroAnimation) heroAnimation.cancel(); applyStyle(requestedStyle); });
+  window.addEventListener('popstate', () => { requestedStyle = new URLSearchParams(location.search).get('style') || 'classic'; if (heroAnimation) heroAnimation.cancel(); applyStyle(requestedStyle); });
   const nav = document.getElementById('site-nav');
   const menu = document.querySelector('.mobile-menu-toggle');
   function closeMenu() { nav.classList.remove('is-open'); menu.setAttribute('aria-expanded', 'false'); }

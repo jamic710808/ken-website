@@ -4,7 +4,7 @@ AI 驅動全端工程師 / 數據分析師 · 17+ 年跨國科技+醫療財務�
 
 ## 原始版與四種個人品牌風格
 
-首頁上方可切換「原始版、顧問誌、系統構築、作品索引、知識小島」五個版本。原始版同頁載入既有 React 網站，保留原本的 Power BI 分頁與預覽；其餘四版恢復原始完整自介與報告內容。共用作品、AI 專案、Power BI、技能與職涯內容，切換時保留搜尋、篩選和展開狀態。風格偏好保存在瀏覽器，也可用 `?style=classic`、`?style=editorial`、`?style=systems`、`?style=gallery`、`?style=island` 直接預覽。
+首頁上方可切換「原始版、顧問誌、系統構築、作品索引、知識小島」五個版本。原始版同頁載入既有 React 網站，保留原本的 Power BI 分頁與預覽；其餘四版恢復原始完整自介與報告內容。共用作品、AI 專案、Power BI、技能與職涯內容，切換時保留搜尋、篩選和展開狀態。預設一打開就是原始版，不記憶訪客的切換選擇；也可用 `?style=classic`、`?style=editorial`、`?style=systems`、`?style=gallery`、`?style=island` 直接預覽。
 
 原版首頁保留在 `index-classic.html`。知識小島以 Animal Island UI 的設計語彙原生實作，沒有安裝新套件；來源與授權位於 `design-exploration/references/`。
 

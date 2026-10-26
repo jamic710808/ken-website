@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-TW" data-style="editorial">
+<html lang="zh-TW" data-style="classic">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="dark">
   <title>Ken Liu 劉炳祥｜財務實務 × 資料分析 × AI 開發</title>
   <meta name="description" content="Ken Liu 劉炳祥，以財務實務理解商業問題，結合 Power BI、資料分析與 AI 工程，打造可用的決策工具。探索作品、職涯與合作機會。">
-  <script>try{const s=new URLSearchParams(location.search).get('style')||localStorage.getItem('ken-brand-style');if(['classic','editorial','systems','gallery','island'].includes(s))document.documentElement.dataset.style=s}catch{}</script>
+  <script>try{const s=new URLSearchParams(location.search).get('style');if(['classic','editorial','systems','gallery','island'].includes(s))document.documentElement.dataset.style=s}catch{}</script>
   <link rel="stylesheet" href="design-exploration/shared.css">
   <link rel="stylesheet" href="design-exploration/themes/editorial.css">
   <link rel="stylesheet" href="design-exploration/themes/systems.css">
@@ -31,20 +31,20 @@
         <button class="mobile-menu-toggle" aria-controls="site-nav" aria-expanded="false">選單</button>
       </div>
       <div class="style-row"><span class="style-label" id="style-label">瀏覽風格</span><div class="style-picker" role="group" aria-label="切換網站風格">
-        <button class="style-button" data-style-choice="classic" aria-pressed="false"><span class="style-swatch" style="--swatch:#a78bfa" aria-hidden="true"></span>原始版</button>
-        <button class="style-button" data-style-choice="editorial" aria-pressed="true"><span class="style-swatch" style="--swatch:#9b4837" aria-hidden="true"></span>顧問誌</button>
+        <button class="style-button" data-style-choice="classic" aria-pressed="true"><span class="style-swatch" style="--swatch:#a78bfa" aria-hidden="true"></span>原始版</button>
+        <button class="style-button" data-style-choice="editorial" aria-pressed="false"><span class="style-swatch" style="--swatch:#9b4837" aria-hidden="true"></span>顧問誌</button>
         <button class="style-button" data-style-choice="systems" aria-pressed="false"><span class="style-swatch" style="--swatch:#c7ef71" aria-hidden="true"></span>系統構築</button>
         <button class="style-button" data-style-choice="gallery" aria-pressed="false"><span class="style-swatch" style="--swatch:#2457e5" aria-hidden="true"></span>作品索引</button>
         <button class="style-button" data-style-choice="island" aria-pressed="false"><span class="style-swatch" style="--swatch:#56baa1" aria-hidden="true"></span>知識小島</button>
-      </div><span class="style-hint" id="style-hint">以專業資歷建立信任</span></div>
+      </div><span class="style-hint" id="style-hint">完整保留原有內容與互動</span></div>
     </div>
   </header>
-  <section id="classic-shell" class="classic-shell" aria-label="原始版完整網站" hidden>
+  <section id="classic-shell" class="classic-shell" aria-label="原始版完整網站">
     <div id="classic-loading" class="classic-loading" role="status">正在載入原始版完整內容…</div>
     <iframe id="classic-frame" title="KenLiu 原始版完整個人品牌網站" data-src="index-classic.html" aria-busy="true"></iframe>
     <p class="classic-fallback" id="classic-fallback" hidden>原始版仍在載入。<a href="index-classic.html" target="_blank" rel="noopener noreferrer">另開原始版完整頁面 ↗</a></p>
   </section>
-  <main id="main">
+  <main id="main" hidden>
     <section id="home" class="hero" aria-label="認識 Ken Liu"></section>
     <section id="about" class="section"><div class="about-grid"><img class="about-photo" src="images/dark.webp" width="800" height="1000" alt="劉炳祥 Ken Liu 人像" loading="lazy"><div class="about-copy"><div class="section-heading"><span class="section-index">01</span><h2>從讀懂數字，<br>到做出解答。</h2></div><div id="original-about"></div><div class="stats"><div class="stat"><strong>17+</strong><span>年財務會計歷練</span></div><div class="stat"><strong id="ai-stat">19</strong><span>個 AI 開發專案</span></div><div class="stat"><strong id="bi-stat">13</strong><span>份 Power BI 報告</span></div></div></div></div></section>
     <section class="story" aria-label="我的工作方法"><div class="story-top"><span>從理解問題，到交付工具</span><span>讓每一個技術選擇，都回到業務現場。</span></div><p class="story-statement"><span>讀懂業務。</span> <span>連接資料。</span><br><span>把解答，做出來。</span></p><div class="story-path" aria-hidden="true"></div></section>
@@ -54,7 +54,7 @@
     <section id="experience" class="section"><div class="section-head"><div><div class="section-heading"><span class="section-index">05</span><h2>經驗，是理解問題的起點。</h2></div><p class="section-intro">從審計查核到財務管理，持續在科技製造與醫療現場累積判斷力。</p></div></div><div class="career-list" id="career-list"></div><button class="button button-secondary career-more" id="career-more" aria-expanded="false" aria-controls="career-list">展開完整經歷</button><p class="education"><strong>中原大學 · 會計學系 · 大學畢業</strong>2001 — 2005<br>財務會計專業學歷</p></section>
     <section id="contact" class="contact-section"><h2>你的下一個問題，<br>我們一起想。</h2><p>有財務分析、資料系統或 AI 應用的想法？<br>歡迎聊聊合作，也歡迎交流。</p><div class="contact-links"><a class="contact-link" href="mailto:jamic710808@gmail.com"><span class="contact-label">Gmail</span><span>jamic710808@gmail.com ↗</span></a><a class="contact-link" href="mailto:jamic710808@hotmail.com"><span class="contact-label">Hotmail</span><span>jamic710808@hotmail.com ↗</span></a><a class="contact-link" href="https://line.me/ti/p/~ken19820808" target="_blank" rel="noopener noreferrer"><span class="contact-label">LINE</span><span>ken19820808 ↗</span></a></div></section>
   </main>
-  <footer class="site-footer"><span>© 2026 Ken Liu 劉炳祥 · 理解商業，也動手創造。</span><div class="footer-links"><a href="https://github.com/jamic710808" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="index-classic.html">原版網站 ↗</a><a href="#home">回到頁首 ↑</a></div></footer>
+  <footer class="site-footer" hidden><span>© 2026 Ken Liu 劉炳祥 · 理解商業，也動手創造。</span><div class="footer-links"><a href="https://github.com/jamic710808" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="index-classic.html">原版網站 ↗</a><a href="#home">回到頁首 ↑</a></div></footer>
   <a class="back-top" href="#home" aria-label="回到頁首" hidden>↑</a><div class="toast" role="status" aria-live="polite" hidden></div>
   <noscript><p style="padding:32px">請啟用 JavaScript 以切換網站風格與瀏覽完整作品，或<a href="index-classic.html">前往原版網站</a>。</p></noscript>
 </body>
